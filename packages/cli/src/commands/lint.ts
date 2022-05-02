@@ -207,7 +207,7 @@ const lintCommand: CommandModule = {
       if (results.length > 0) {
         process.exit(severeEnoughToFail(results, failSeverity) ? 1 : 0);
       } else if (config.quiet !== true) {
-        process.stdout.write(`No results with a severity of '${failSeverity}' or higher found!`);
+        process.stdout.write(`No results with a severity of '${failSeverity}' or higher found!\n`);
       }
     } catch (ex) {
       fail(isError(ex) ? ex : new Error(String(ex)), config.verbose === true);
